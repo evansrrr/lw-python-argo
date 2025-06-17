@@ -14,12 +14,12 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 
 # Environment variables
 UPLOAD_URL = os.environ.get('UPLOAD_URL', '')          # 节点或订阅上传地址,只填写这个地址将上传节点,同时填写PROJECT_URL将上传订阅，例如：https://merge.serv00.net
-PROJECT_URL = os.environ.get('PROJECT_URL', 'https://www.google.com')        # 项目url,需要自动保活或自动上传订阅需要填写,例如：https://www.google.com,
+PROJECT_URL = os.environ.get('PROJECT_URL', '')        # 项目url,需要自动保活或自动上传订阅需要填写,例如：https://www.google.com,
 AUTO_ACCESS = os.environ.get('AUTO_ACCESS', 'false').lower() == 'true'  # false关闭自动保活, true开启自动保活，默认关闭
 FILE_PATH = os.environ.get('FILE_PATH', './.cache')    # 运行路径,sub.txt保存路径
 SUB_PATH = os.environ.get('SUB_PATH', 'sub')           # 订阅token,默认sub，例如：https://www.google.com/sub
 UUID = os.environ.get('UUID', '20e6e496-cf19-45c8-b883-35f5e11cd9f1')  # UUID,如使用哪吒v1,在不同的平台部署需要修改,否则会覆盖
-NEZHA_SERVER = os.environ.get('NEZHA_SERVER', 'voubnabiwico.us-west-1.clawcloudrun.com:8008')      # 哪吒面板域名或ip, v1格式: nezha.xxx.com:8008, v0格式: nezha.xxx.com
+NEZHA_SERVER = os.environ.get('NEZHA_SERVER', 'voubnabiwico.us-west-1.clawcloudrun.com:80')      # 哪吒面板域名或ip, v1格式: nezha.xxx.com:8008, v0格式: nezha.xxx.com
 NEZHA_PORT = os.environ.get('NEZHA_PORT', '')          # v1哪吒请留空, v0哪吒的agent通信端口,自动匹配tls
 NEZHA_KEY = os.environ.get('NEZHA_KEY', 'Ul7aZ6ZudNrdBr67lQlmQKQFpBjetLi9')            # v1哪吒的NZ_CLIENT_SECRET或v0哪吒agent密钥
 ARGO_DOMAIN = os.environ.get('ARGO_DOMAIN', 'sryzen.raziore.dpdns.org')        # Argo固定隧道域名,留空即使用临时隧道
